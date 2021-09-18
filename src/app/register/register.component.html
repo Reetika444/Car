@@ -1,0 +1,75 @@
+<form #f="ngForm">
+  <div class="row">
+    <div class="col-md-5">
+      
+   
+    </div>
+    <div class="col-md-3 heading">
+      <h1>Seat Registration </h1>
+
+    
+  </div>
+  <div class="col-md-2">
+     
+  </div>
+  </div>
+  <div class="row movieregister bg-img">
+    <div class="col-md-3">
+     
+      </div>
+     <div class="col-md-6">
+      <div class="form-group" style="margin-top: 33px;">
+        <label for="exampleInputEmail1" style="color:white">Name <span class="color">*</span></label>
+        <input  required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" name="name" [(ngModel)]="register.name">
+        <!-- <span *ngIf="namevalidation" class="text-danger">Name is a required field</span> -->
+      </div>
+      <!-- <div class="form-group">
+        <label for="exampleInputEmail1" style="color:white">Email address <span class="color">*</span></label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" [(ngModel)]="register.email">
+       
+      </div> -->
+
+      <div class="form-group content">
+        <label for="exampleInputEmail1" style="color:white">Email address <span class="color">*</span></label>
+        <input type="email" [pattern]="emailPattern" class="form-control" required #exampleInputEmail1="ngModel" aria-describedby="emailHelp" 
+        placeholder="Enter email" name="email" [(ngModel)]="register.email">
+        <div *ngIf="exampleInputEmail1.errors"> 
+          <div *ngIf="exampleInputEmail1.errors.pattern"> 
+             <span class="text-danger" style="font-weight:bolder">Please enter valid email</span>
+          </div> 
+       </div> 
+        <!-- <span *ngIf="emailvalidation" class="text-danger">Email is a required field</span> -->
+      </div>
+
+
+      <div class="form-group">
+        <label for="exampleInputPassword1" style="color:white">Password <span class="color">*</span></label>
+        <input type="password" class="form-control" id="exampleInputPassword1" required placeholder="Password" name="password" [(ngModel)]="register.password">
+        <!-- <span *ngIf="passwordvalidation" class="text-danger">Password is a required field</span> -->
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" style="color:white">Confirm Password <span class="color">*</span></label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" name="confirmpassword" [(ngModel)]="confirmpassword">
+        <!-- <span *ngIf="confirmpasswordvalidation" class="text-danger">ConfirmPassword is a required field</span> -->
+        <span *ngIf="visible" class="text-danger" style="font-weight: bolder;">Password and Confirm Password does not match</span>
+        <span *ngIf="allfieldsvalidation"style="font-weight: bolder;font-size: medium;" class="text-danger">Kindly fill all required fields.</span>
+        
+      </div>
+     
+  
+      <button  class="btn btn-primary" (click)=submit()>Sign Up</button>
+      
+      <button  class="btn btn-primary" (click)=login()>Sign In</button>
+     
+      <span style="font-weight: bolder;font-size: medium;"[ngClass]="(status == 1) ?'text-success':'text-danger'">{{message}}</span>
+      
+      <!-- <span class="text-danger" *ngIf="login_status == 0">{{login_message}}</span> -->
+     </div>
+     
+     <div class="col-md-3"></div>
+    
+  </div>
+
+</form>
+<ngx-spinner></ngx-spinner>
+<!-- <button  class="btn btn-primary" (click)=login()>Log In</button> -->

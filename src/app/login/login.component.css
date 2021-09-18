@@ -1,0 +1,23 @@
+.movielogin{
+    margin-top: 94px;
+    /* background-color: yellow */
+}
+.color{
+    color:red;
+}
+.bg-img {
+    background-image: url('/assets/cinemalogin.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 400px;
+    width:900px;
+    margin-left:250px;
+  }
+
+  .content{
+      margin-top: 100px;
+  }

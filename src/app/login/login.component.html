@@ -1,0 +1,53 @@
+<form>
+  <!-- <div class="container bg-img" style=" max-width: 1000px;margin-top: 50px;height: 500px;"></div> -->
+  <div class="row movielogin bg-img">
+    <div class="col-md-3">
+      </div>
+     <div class="col-md-6">
+     
+      <div class="form-group content">
+        <label for="exampleInputEmail1">Email address <span class="color">*</span></label>
+        <!-- <input type="email" [pattern]="emailPattern" class="form-control" required id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" [(ngModel)]="login.email"> -->
+       <!-- changes -->
+        <input type="email" [pattern]="emailPattern" class="form-control" required #exampleInputEmail1="ngModel" aria-describedby="emailHelp" 
+        placeholder="Enter email" name="email" [(ngModel)]="login.email">
+        <!-- <input name="officialEmail" [ngModel]="user.officialEmail" required  #offEmail="ngModel">  -->
+        <div *ngIf="exampleInputEmail1.errors"> 
+          <!-- <div *ngIf="exampleInputEmail1.errors.required"> 
+              Official Email required.
+          </div>			    -->
+          <div *ngIf="exampleInputEmail1.errors.pattern"> 
+             <span class="text-danger" style="font-weight:bolder;">Please enter valid email</span>
+          </div>
+         
+          
+       </div> 
+        <span *ngIf="emailvalidation" class="text-danger">Email is a required field</span>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password <span class="color">*</span></label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" [(ngModel)]="password">
+        <span *ngIf="passwordvalidation" class="text-danger">Password is a required field</span>
+      </div>
+      
+      <div class="row">
+      <button  class="btn btn-primary" (click)=Login()>Sign In</button>
+      <!-- <button class="btn" (click)=Register()>New User? Register Here</button> -->
+      <!-- <marquee class="message" onmouseover="this.stop()" onmouseout="this.start()" >Dear Customer, Due to Covid Pandemic Technician Visit 
+        may get delayed, for Covid Safety please click link on <a href="https://crm.cogentlab.com/v-cvd19/dnd.php" target="_blank">https://crm.cogentlab.com/v-cvd19/dnd.php</a>
+      </marquee>
+       -->
+       <button style="height:32px;"><a style="text-decoration: underline;" (click)=Register() >New User? Register Here</a></button>
+
+
+      <span [ngClass]="(status == 1) ?'text-success':'text-danger'" style="font-weight:bolder;">{{login_message}}</span>
+    </div>
+      <!-- <span class="text-danger" *ngIf="login_status == 0">{{login_message}}</span> -->
+     </div>
+     
+     <div class="col-md-3"></div>
+    
+  </div>
+
+</form>
+<ngx-spinner></ngx-spinner>

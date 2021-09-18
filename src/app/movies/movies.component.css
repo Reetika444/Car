@@ -1,0 +1,54 @@
+
+
+.modal .show{
+    display:block;
+}
+.btn1{
+    /* margin-left:1099px; */
+    margin-top:20px;
+    margin-left:15px;
+}
+
+.tablehead{
+    font-weight: 900;
+}
+.color{
+    background-color: #636e72;
+    color:#dfe6e9;
+}
+.color1{
+    background-color: #b2bec3;
+}
+.tabledata{
+    padding-left: 58px;
+    font-weight: 900;
+    padding-top: 70px;
+}
+
+*{
+    box-sizing: border-box;
+    overflow:hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.mimage{
+   width:10vw;
+   height:20vh;
+   overflow: hidden;
+   
+}
+.movietitle{
+    font-size: medium;
+    font-weight: 600;
+}
+
+.body{
+    width:70vw;
+    height:70vh;
+    overflow-x: hidden;
+}
+
+table {
+    overflow-y: hidden; 
+
+  }
