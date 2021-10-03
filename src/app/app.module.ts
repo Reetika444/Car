@@ -15,12 +15,15 @@ import { LoginComponent } from './login/login.component';
 import { SearchPipe } from './search.pipe';
 import { AuthGuard } from './auth.guard';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import { CarComponent } from './car/car.component';
+import { CarDetailsService } from './Services/car-details.service';
 
 const appRoutes:Routes=[
-  {path:'register',component:RegisterComponent},
-  {path:'movies',component:MoviesComponent,canActivate: [AuthGuard]},
-  {path:'login',component:LoginComponent},
-  {path:'', component: LoginComponent},
+  // {path:'register',component:RegisterComponent},
+  // {path:'movies',component:MoviesComponent,canActivate: [AuthGuard]},
+  // {path:'login',component:LoginComponent},
+  // {path:'', component: LoginComponent},
+  {path:'car', component:CarComponent},
   {path: '**', redirectTo: '',}
 ];
 
@@ -32,6 +35,7 @@ const appRoutes:Routes=[
     MoviesComponent,
     LoginComponent,
     SearchPipe,
+    CarComponent,
     
   ],
   imports: [
@@ -40,7 +44,7 @@ const appRoutes:Routes=[
     FormsModule,
     NgxSpinnerModule,
   ],
-  providers: [DataService,AuthGuard],
+  providers: [DataService,AuthGuard,CarDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

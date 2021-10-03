@@ -1,0 +1,52 @@
+<!-- <p>
+  car works!
+</p> -->
+
+
+<div class="row">
+ 
+  <div class="col-md-3 ">
+    <input type="text" class="form-control"  placeholder="Search" name="search" [(ngModel)]="search"/>
+    <!-- {{search}} -->
+  </div>
+  
+</div>
+
+
+<ng-container *ngFor="let cararray of dataArr | search:search">
+
+
+  <div class="card">
+    <div class="card-body">
+      {{cararray.vehicle_type_code1}}
+      <br>
+      {{cararray.crash_date}}
+      <br>
+      {{cararray.crash_time}}
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      {{cararray.vehicle_type_code2}}
+      <br>
+      {{cararray.crash_date}}
+      <br>
+      {{cararray.crash_time}}
+    </div>
+  </div>
+
+  <!-- <tr class="color1"> -->
+     
+
+      <!-- <td  class="movietitle">{{cararray.vehicle_type_code1}}</td> -->
+      
+      <!-- <td  class="tabledata"> {{cararray.crash_time}}</td>
+      <td  class=" tabledata">{{cararray.on_street_time}}</td> -->
+      <!-- <td  ><button type="button" style="margin-top:53px;" class="btn btn-danger" (click)="bookMovie(moviearray.id,moviearray.seats_available,moviearray.movie_name,moviearray.theatre_number)"  data-toggle="modal" data-target="#myModal">Book</button> -->
+      <!-- <td><button  style="margin-top:53px;" (click)="bookMovie(moviearray.id,moviearray.seats_available)" (click)="showModal=true" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+       Book
+      </button> -->
+      <!-- </td> -->
+  <!-- </tr> -->
+</ng-container>
